@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TypescriptbasicsComponent } from './typescriptbasics/typescriptbasics.component';
+
+//Modules
+import { PassangerDashboardModule } from './angular/passanger-dashboard/passanger-dashboard.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TypescriptbasicsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // custom modules
+    PassangerDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

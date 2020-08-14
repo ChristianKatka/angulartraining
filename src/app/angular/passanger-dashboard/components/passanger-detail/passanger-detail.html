@@ -1,0 +1,15 @@
+<!-- if checked in true add checked-in class to the span element -->
+<span class="status" [class.checked-in]="detail.checkedIn">
+  {{ detail.fullname }}
+</span>
+
+<div class="date">
+  check in date:
+  <!-- should use pipe date  -->
+  {{ detail.checkInDate ? (detail.checkInDate) : 'not checked in' }}
+</div>
+
+<div class="children">
+  <!-- if no children. display 0 -->
+  Children: {{ detail.children?.length || 0 }}
+</div>
