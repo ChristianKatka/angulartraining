@@ -1,6 +1,18 @@
 <!-- if checked in true add checked-in class to the span element -->
 <span class="status" [class.checked-in]="detail.checkedIn">
-  {{ detail.fullname }}
+  <div *ngIf="editing">
+    <input
+      type="text"
+      [value]="detail.fullname"
+      (input)="onNameChange(name.value)"
+      #name
+    />
+  </div>
+
+  <div *ngIf="!editing">
+    {{ detail.fullname }}
+  </div>
+  <button (click)="toggleEdit()">{{ editing? 'done' : 'edit' }}</button>
 </span>
 
 <div class="date">
@@ -13,3 +25,5 @@
   <!-- if no children. display 0 -->
   Children: {{ detail.children?.length || 0 }}
 </div>
+<button (click)="onRemove()">Remove</button>
+
